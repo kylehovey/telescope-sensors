@@ -61,7 +61,7 @@ pm10_config = {
 };
 
 outside_temperature_id = 'outdoorTemperature'
-outside_temperature_state_topic = state_topic_for(outside_particulate_id)
+outside_temperature_state_topic = state_topic_for(outside_temperature_id)
 
 outside_temperature_discovery_topic = discovery_topic_for(f'{outside_temperature_id}_temperature')
 temperature_config = {
@@ -110,10 +110,10 @@ for key, meta in configs.items():
     )
 
 while True:
-    time.sleep(1)
+    time.sleep(5)
 
     temperatureData = {
-        "temperature": pct.temperature,
+        "temperature": round(32.0 + pct.temperature * 9.0/5.0, 2),
     }
 
     client.publish(configs['temperature']['state_topic'], json.dumps(temperatureData))

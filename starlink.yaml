@@ -1,0 +1,145 @@
+sensor:
+  # dish_grpc_mqtt.py status
+  - name: "Starlink Hardware Version"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/hardware_version
+  - name: "Starlink Software Version"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/software_version
+  - name: "Starlink State"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/state
+  - name: "Starlink Uptime"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/uptime
+    unit_of_measurement: s
+  - name: "Starlink SNR"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/snr
+    unit_of_measurement: dB
+  - name: "Starlink Seconds to First Nonempty Slot"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/seconds_to_first_nonempty_slot
+    unit_of_measurement: s
+  - name: "Starlink PoP Ping Drop Rate"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/pop_ping_drop_rate
+    unit_of_measurement: "%"
+  - name: "Starlink Donwnlink Throughput"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/downlink_throughput_bps
+    unit_of_measurement: "bps"
+  - name: "Starlink Uplink Throughput"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/uplink_throughput_bps
+    unit_of_measurement: "bps"
+  - name: "Starlink PoP Ping Latency"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/pop_ping_latency_ms
+    unit_of_measurement: ms
+  - name: "Starlink Alerts"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/alerts
+  - name: "Starlink Obstructed Fraction"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/fraction_obstructed
+  - name: "Starlink Obstructed Current"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/currently_obstructed
+  - name: "Starlink Seconds Obstructed"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/seconds_obstructed
+    unit_of_measurement: s
+  - name: "Starlink Obstruction Duration"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/obstruction_duration
+    unit_of_measurement: s
+  - name: "Starlink Obstruction Interval"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/obstruction_interval
+    unit_of_measurement: s
+  - name: "Starlink Azimuth"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/direction_azimuth
+    unit_of_measurement: "˚"
+  - name: "Starlink Elevation"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/direction_elevation
+    unit_of_measurement: "˚"
+
+  # dish_grpc_mqtt.py obstruction_detail
+  - name: "Starlink Wedges Fraction Obstructed"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/wedges_fraction_obstructed
+  - name: "Starlink Raw Wedges Fraction Obstructed"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/raw_wedges_fraction_obstructed
+  - name: "Starlink Valid S"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/valid_s
+
+  # dish_grpc_mqtt.py alert_detail
+  - name: "Starlink Alert - Motors Stuck"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/alert_motors_stuck
+  - name: "Starlink Alert - Thermal Throttle"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/alert_thermal_throttle
+  - name: "Starlink Alert - Thermal Shutdown"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/alert_thermal_shutdown
+  - name: "Starlink Alert - Mast Not Near Vertical"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/alert_mast_not_near_vertical
+  - name: "Starlink Alert - Unexpected Location"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/alert_unexpected_location
+  - name: "Starlink Alert - Slow Ethernet Speeds"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/alert_slow_ethernet_speeds
+  - name: "Starlink Alert - Roaming"
+    state_topic: starlink/dish_status/ut01000000-00000000-001d556e/alert_roaming
+
+  # dish_grpc_mqtt.py ping_drop ping_run_length ping_latency ping_loaded_latency
+  - name: "Starlink Samples"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/samples
+    unit_of_measurement: samples
+  - name: "Starlink End Counter"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/end_counter
+    unit_of_measurement: samples
+  - name: "Starlink Total Ping Drop"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/total_ping_drop
+    unit_of_measurement: "sample intervals"
+  - name: "Starlink Count Full Ping Drop"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/count_full_ping_drop
+    unit_of_measurement: samples
+  - name: "Starlink Count Obstructed"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/count_obstructed
+    unit_of_measurement: samples
+  - name: "Starlink Total Obstructed Ping Drop"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/total_obstructed_ping_drop
+    unit_of_measurement: "sample intervals"
+  - name: "Starlink Count Full Obstructed Ping Drop"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/count_full_obstructed_ping_drop
+    unit_of_measurement: samples
+  - name: "Starlink Count Unscheduled"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/count_unscheduled
+    unit_of_measurement: samples
+  - name: "Starlink Total Unscheduled Ping Drop"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/total_unscheduled_ping_drop
+    unit_of_measurement: "sample intervals"
+  - name: "Starlink Count Full Unscheduled Ping Drop"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/count_full_unscheduled_ping_drop
+    unit_of_measurement: samples
+  - name: "Starlink Init Run Fragment"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/init_run_fragment
+    unit_of_measurement: "sample intervals"
+  - name: "Starlink Final Run Fragment"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/final_run_fragment
+    unit_of_measurement: "sample intervals"
+  - name: "Starlink Run Seconds"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/run_seconds
+  - name: "Starlink Run Minutes"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/run_minutes
+  - name: "Starlink Mean All Ping Latency"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/mean_all_ping_latency
+    unit_of_measurement: ms
+  - name: "Starlink Deciles All Ping Latency"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/deciles_all_ping_latency
+  - name: "Starlink Mean Full Ping Latency"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/mean_full_ping_latency
+    unit_of_measurement: ms
+  - name: "Starlink Deciles Full Ping Latency"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/deciles_full_ping_latency
+  - name: "Starlink Stdev Full Ping Latency"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/stdev_full_ping_latency
+    unit_of_measurement: ms
+  - name: "Starlink Load Bucket Samples"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/load_bucket_samples
+  - name: "Starlink Load Bucket Min Latency"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/load_bucket_min_latency
+  - name: "Starlink Load Bucket Median Latency"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/load_bucket_median_latency
+  - name: "Starlink Load Bucket Max Latency"
+    state_topic: starlink/dish_ping_stats/ut01000000-00000000-001d556e/load_bucket_max_latency
+
+  # dish_grpc_mqtt.py usage
+  - name: "Starlink Download Usage"
+    state_topic: starlink/dish_usage/ut01000000-00000000-001d556e/download_usage
+    unit_of_measurement: bytes
+  - name: "Starlink Upload Usage"
+    state_topic: starlink/dish_usage/ut01000000-00000000-001d556e/upload_usage
+    unit_of_measurement: bytes
